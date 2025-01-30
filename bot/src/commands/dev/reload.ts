@@ -1,5 +1,8 @@
 import { ApplicationCommandOptionType, PermissionFlagsBits } from 'discord.js'
-import { ISlimedCommand, loadCommands } from '../../../../packages/devslimedcommands/src/index'
+import {
+  ISlimedCommand,
+  loadCommands,
+} from '../../../../packages/devslimedcommands/src/index'
 const reload: ISlimedCommand = {
   name: 'reload',
   description: 'Reloads all commands and events',

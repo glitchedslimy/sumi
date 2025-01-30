@@ -2,17 +2,38 @@ import {
   CommandInteractionOptionResolver,
   ChatInputCommandInteraction,
   StringSelectMenuInteraction,
+  ModalBuilder,
+  TextInputBuilder,
+  TextInputStyle,
+  ActionRowBuilder,
+  ModalSubmitInteraction,
 } from 'discord.js'
 import { IExtendedInteraction, ISlimedClient, IEvent } from '../../interfaces'
 
 const interactionCreate: IEvent = {
   event: 'interactionCreate',
   once: false,
-  run: async (
-    interaction: ChatInputCommandInteraction | StringSelectMenuInteraction,
-    client: ISlimedClient
-  ) => {
+  run: async (interaction, client: ISlimedClient) => {
+    if (interaction.isModalSubmit()) {
+      const modalData = {
+        fields: new Map(),
+        originalOptions:
+          interaction.options as CommandInteractionOptionResolver,
+      }
+      const command = client.commands.get(interaction.customId)
+      for (const component of command?.modal?.components ?? []) {
+        const value = interaction.fields.getTextInputValue(component.id)
+        modalData.fields.set(component.id, value)
+      }
+      command?.run({
+        args: interaction.options as CommandInteractionOptionResolver,
+        client,
+        interaction: interaction as IExtendedInteraction,
+        modalData: modalData,
+      })
+    }
     if (interaction.isChatInputCommand()) {
+      console.log('Chat input command')
       if (interaction.isCommand()) {
         const command = client.commands.get(interaction.commandName)
         if (!command) {
@@ -24,7 +45,6 @@ const interactionCreate: IEvent = {
             ephemeral: true,
           })
         }
-
         const isSubcommand = interaction.options.getSubcommand(false)
         if (isSubcommand && command.options) {
           const subcommandFile = client.subCommands.get(

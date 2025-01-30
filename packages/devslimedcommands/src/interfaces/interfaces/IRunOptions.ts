@@ -6,4 +6,5 @@ export interface IRunOptions {
   client: ISlimedClient
   interaction: IExtendedInteraction
   args: CommandInteractionOptionResolver
+  modalData?: any
 }

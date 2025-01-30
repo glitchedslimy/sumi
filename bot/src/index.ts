@@ -5,7 +5,28 @@ import { ActivityType, Partials } from 'discord.js'
 export const client = new SlimedClient({
   token: config.token,
   botOptions: {
-    intents: [3276799],
+    intents: [
+      'AutoModerationConfiguration',
+      'AutoModerationExecution',
+      'DirectMessageReactions',
+      'DirectMessageTyping',
+      'DirectMessages',
+      'GuildBans',
+      'GuildEmojisAndStickers',
+      'GuildIntegrations',
+      'GuildInvites',
+      'GuildMembers',
+      'GuildMessageReactions',
+      'GuildMessageTyping',
+      'GuildMessages',
+      'GuildModeration',
+      'GuildPresences',
+      'GuildScheduledEvents',
+      'GuildVoiceStates',
+      'GuildWebhooks',
+      'Guilds',
+      'MessageContent',
+    ],
     partials: [
       Partials.Channel,
       Partials.GuildMember,
@@ -18,7 +39,7 @@ export const client = new SlimedClient({
   },
   guildId: config.guildId,
   activity: {
-    name: 'some good tunes 😎',
+    name: 'Realistic Paint Studio',
     type: ActivityType.Playing,
   },
 })
