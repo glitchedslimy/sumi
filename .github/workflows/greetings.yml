@@ -1,0 +1,17 @@
+name: Greet new contributors
+
+on: [pull_request, issue]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    permission:
+      issues: write
+      pull-requests: write
+      
+    steps:
+      - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Thanks for opening your first issue on Mixty! Be sure to follow the issue template!"
+        pr-message: "Thanks for opening your first Pull Request on Mixty! Be sure to follow the issue template!"

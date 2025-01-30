@@ -1,0 +1,43 @@
+name: Feature Request
+description: You want a new feature? Just tell us to add it!
+title: '[Feat]: '
+labels: ['feat', 'request']
+assignees:
+  - reallyslimy
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: textarea
+    id: feature
+    attributes:
+      label: Explain the feature
+      description: What feature do you want to be added?
+      placeholder: ex. I want a new command that does this
+      value: 'I want a new feature!'
+    validations:
+      required: true
+  - type: dropdown
+    id: location
+    attributes:
+      label: Feature Location
+      description: Where do you want this feature to be in?
+      options:
+        - On the Bot
+        - On the Website
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Tell us extra info in case you didn't choose a location
+      description: If you didn't choose a location, tell us extra info about where you want this feature to be in.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

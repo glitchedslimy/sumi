@@ -1,0 +1,19 @@
+bot:
+  - bot/**/*
+
+web:
+  - web/**/*
+
+utils:
+  - shared/**/*
+
+asset:
+  - asset/**/*
+
+ci/cd:
+  - .github/**/*
+
+docs:
+  - readme.md
+  - contributing.md
+  - web/docs/**/*

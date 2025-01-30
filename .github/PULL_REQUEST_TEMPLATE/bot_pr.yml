@@ -1,0 +1,38 @@
+name: New Bot Pull Request
+description: You want a new feature? Just tell us to add it!
+title: '[Bot]: '
+labels: ['bot']
+assignees:
+  - reallyslimy
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Explain the feature
+      description: What you have added?
+      placeholder: ex. I added this inside the bot
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Type of Change
+      description: What type of change is this?
+      options:
+        - Major Change
+        - Minor Change
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Tell us extra info about the Pull Request if needed
+      description: Tell us more information if needed here.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this Pull Request, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

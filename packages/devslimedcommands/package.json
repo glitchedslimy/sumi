@@ -1,0 +1,29 @@
+{
+  "name": "devslimedcommands",
+  "version": "0.2.0",
+  "description": "Custom made handler for commands and events in discordjs v14",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "fast-glob": "^3.2.12",
+    "kleur": "^4.1.5",
+    "winston": "^3.8.2"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "commandhandler",
+    "eventhandler",
+    "slimed",
+    "slimedbot",
+    "slimedcommands",
+    "discordbot",
+    "discord dev",
+    "discord.js",
+    "development",
+    "handler",
+    "command",
+    "event"
+  ],
+  "author": "Slimy"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "mixty",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "build": "nx run-many --target=build --all",
+    "lint": "nx run-many --target=lint --all",
+    "format": "nx run-many --target=format --all"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@nrwl/eslint-plugin-nx": "^16.0.3",
+    "@types/convict": "^6.1.1",
+    "@types/pino": "^7.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "nx": "16.0.1",
+    "nx-cloud": "latest",
+    "prettier": "^2.8.8",
+    "tsc-alias": "^1.8.6",
+    "tsx": "^3.12.7",
+    "typescript": "*"
+  },
+  "workspaces": [
+    "bot/*",
+    "web/*",
+    "shared/*",
+    "packages/*",
+    "packages/dist/*"
+  ],
+  "dependencies": {
+    "axios": "^1.4.0",
+    "convict": "^6.2.4",
+    "devslimedcommands": "workspace:packages/devslimedcommands",
+    "discord.js": "^14.10.0",
+    "fast-glob": "^3.2.12",
+    "kleur": "^4.1.5",
+    "winston": "^3.8.2"
+  },
+  "packageManager": "yarn@3.5.1"
+}
