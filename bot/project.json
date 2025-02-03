@@ -1,5 +1,5 @@
 {
-  "name": "MixtyBot",
+  "name": "Sumi",
   "version": "0.1.2",
   "root": "bot",
   "sourceRoot": "bot/src",
@@ -9,7 +9,7 @@
     "dev": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn exec nx run MixtyBot:dev --configuration=development"
+        "command": "yarn exec nx run Sumi:dev --configuration=development"
       },
       "configurations": {
         "production": {

@@ -31,7 +31,6 @@
   },
   "workspaces": [
     "bot/*",
-    "web/*",
     "shared/*",
     "packages/*",
     "packages/dist/*"
@@ -43,6 +42,7 @@
     "discord.js": "^14.10.0",
     "fast-glob": "^3.2.12",
     "kleur": "^4.1.5",
+    "node-vibrant": "^4.0.3",
     "winston": "^3.8.2"
   },
   "packageManager": "yarn@3.5.1"
